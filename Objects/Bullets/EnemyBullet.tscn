@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Objects/Bullets/Bullet.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Objects/Bullets/EnemyBullet.gd" type="Script" id=2]
+[ext_resource path="res://assets/efecto_fuego_00001.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 9.47229, 10.2931 )
+
+[node name="EnemyBullet" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+speed = 200
+damage = 20
+lifetime = 0.5
+
+[node name="Sprite" parent="." index="0"]
+position = Vector2( -1.06937, -0.485306 )
+scale = Vector2( 0.213305, 0.213305 )
+texture = ExtResource( 3 )
+region_rect = Rect2( 324.526, 24.2632, 108.421, 95.7895 )
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2( -0.647064, 0 )
+shape = SubResource( 1 )
+[connection signal="body_entered" from="." to="." method="_on_EnemyBullet_body_entered"]

@@ -1,0 +1,68 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Character/EnemyFollowsU.gd" type="Script" id=1]
+[ext_resource path="res://Objects/Bullets/EnemyBullet.tscn" type="PackedScene" id=2]
+[ext_resource path="res://icon.png" type="Texture" id=3]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 3 ), null ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 32.3158, 33.823 )
+
+[sub_resource type="CircleShape2D" id=3]
+radius = 417.759
+
+[node name="EnemyFollowsU" type="KinematicBody2D"]
+rotation = -0.00237009
+collision_layer = 2
+collision_mask = 129
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+Bullet = ExtResource( 2 )
+speed = 200
+rotation_speed = 1.0
+gun_cooldown = 0.5
+health = 40
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "walk"
+
+[node name="Enemy" type="CollisionShape2D" parent="."]
+position = Vector2( -0.754715, 0 )
+shape = SubResource( 2 )
+
+[node name="firing direction" type="Sprite" parent="."]
+visible = false
+position = Vector2( 0, 0.131762 )
+rotation = -7.51433e-005
+scale = Vector2( 1, 0.411198 )
+texture = ExtResource( 3 )
+offset = Vector2( 20, 0 )
+
+[node name="Firing" type="Position2D" parent="firing direction"]
+position = Vector2( 55, 0 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+modulate = Color( 0.941176, 0.0941176, 0.0941176, 1 )
+self_modulate = Color( 0.929412, 0.0352941, 0.0352941, 1 )
+position = Vector2( 0, 6 )
+scale = Vector2( 0.5, 0.5 )
+shape = SubResource( 3 )
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="GunTimer" type="Timer" parent="."]
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]
+[connection signal="timeout" from="GunTimer" to="." method="_on_GunTimer_timeout"]
