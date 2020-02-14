@@ -2,6 +2,9 @@ extends Character
 
 onready var dialog: Panel = $DialogBox
 
+func _ready() -> void:
+	$AnimatedSprite.play("ideal")
+
 func _process(delta: float) -> void:
 	#_dialogs()
 	pass

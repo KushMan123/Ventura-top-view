@@ -9,8 +9,8 @@ export var move_speed=1500
 export var push_speed=120.0
 export var hit_speed=120.0
 export var friction=-300
-export var MAX_SPEED=200
-export var HEALTH=100
+export var MAX_SPEED=350
+export var HEALTH=1000
 
 var motion=Vector2()
 var before_direction=Vector2()
@@ -36,9 +36,9 @@ func _physics_process(delta: float) -> void:
 		if Input.is_action_just_pressed("shoot"):
 			shoot()
 		if Input.is_action_just_pressed("boost"):
-			MAX_SPEED=300.0
+			MAX_SPEED=450.0
 		if Input.is_action_just_released("boost"):
-			MAX_SPEED=200.0
+			MAX_SPEED=350.0
 		update_animation(direction,before_direction)
 		set_position2d()
 		motion=calculate_motion(direction,move_speed,delta)

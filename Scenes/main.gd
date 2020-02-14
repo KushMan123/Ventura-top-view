@@ -4,14 +4,17 @@ class_name Main_scene_1
 onready var Enemies=preload("res://Character/EnemyFollowsU.tscn")
 onready var Tilemap_collection=get_node("Tile map collection")
 onready var Character_collection=get_node("Charcter_collection")
-onready var Player=get_node("Player")
 onready var Event_item_collection=get_node("Event_item_collection")
+onready var Spawing_area_collection=get_node("Spawning_area_collection")
+
+onready var spawned=false
 
 func _ready() -> void:
 	set_process(true)
 	set_camera_limits()
 
 func _process(delta: float) -> void:
+	randomize()
 	if global.is_inside_area and global.is_talkable:
 		if Input.is_action_just_pressed("Z_button"):
 			print("z button pressed")
@@ -37,4 +40,10 @@ func set_camera_limits():
 	$Player/Camera2D.limit_bottom=map_limits.end.y*map_cellsize.y
 		
 			
-		
+
+func _on_Area2D_player_entered(area: Area2D) -> void:
+	var enemy_spawnin_node=area.get_node("Enemy_Collection")
+	for i in range(0, enemy_spawnin_node.get_child_count()):
+		enemy_spawnin_node.get_child(i).set_visible(true);
+
+

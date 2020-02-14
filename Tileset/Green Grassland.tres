@@ -153,7 +153,7 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 segments = PoolVector2Array( 0, 51.1772, 62.3057, 51.8716, 62.3057, 51.8716, 64, 128, 64, 128, 0, 128, 0, 128, 0, 51.1772 )
 
 [sub_resource type="ConcavePolygonShape2D" id=51]
-segments = PoolVector2Array( 55, 192, 29, 156, 29, 156, 38, 88, 38, 88, 79, 30, 79, 30, 99, 7, 99, 7, 181, 2, 181, 2, 237, 25, 237, 25, 263, 63, 263, 63, 272, 98, 272, 98, 278, 139, 278, 139, 259, 171, 259, 171, 242, 191, 242, 191, 55, 192 )
+segments = PoolVector2Array( 58, 190, 46, 174, 46, 174, 37, 151, 37, 151, 273, 149, 273, 149, 269, 161, 269, 161, 262, 180, 262, 180, 250, 189, 250, 189, 236, 192, 236, 192, 58, 190 )
 
 [sub_resource type="ConcavePolygonShape2D" id=52]
 segments = PoolVector2Array( 32.889, 60.8369, 42.6112, 40.0035, 42.6112, 40.0035, 55.8057, 25.4202, 55.8057, 25.4202, 62.0557, 23.3368, 62.0557, 23.3368, 64, 64, 64, 64, 32.889, 60.8369 )
@@ -219,10 +219,10 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 
 [sub_resource type="ConcavePolygonShape2D" id=73]
-segments = PoolVector2Array( 64, 126.75, 0, 126.75, 0, 126.75, 1, 0, 1, 0, 52, 0, 52, 0, 63, 122.75, 63, 122.75, 64, 126.75 )
+segments = PoolVector2Array( 0, 0, 34, 2, 34, 2, 35, 128, 35, 128, 0, 128, 0, 128, 0, 0 )
 
 [sub_resource type="ConvexPolygonShape2D" id=74]
-points = PoolVector2Array( 131, 123.75, 138, 0, 189, 0, 191, 128 )
+points = PoolVector2Array( 191, 0, 192, 127, 157, 128, 155, 0 )
 
 [sub_resource type="ConvexPolygonShape2D" id=75]
 points = PoolVector2Array( 0, 0, 256, 0, 256, 192, 0, 192 )
@@ -2287,3 +2287,13 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 150/navigation_offset = Vector2( 0, 0 )
 150/shapes = [  ]
 150/z_index = 0
+151/name = "Grassland@64x64.png 151"
+151/texture = ExtResource( 1 )
+151/tex_offset = Vector2( 0, 0 )
+151/modulate = Color( 1, 1, 1, 1 )
+151/region = Rect2( 288, 736, 32, 32 )
+151/tile_mode = 0
+151/occluder_offset = Vector2( 0, 0 )
+151/navigation_offset = Vector2( 0, 0 )
+151/shapes = [  ]
+151/z_index = 0
