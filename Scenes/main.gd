@@ -6,7 +6,7 @@ onready var Tilemap_collection=get_node("Tile map collection")
 onready var Character_collection=get_node("Charcter_collection")
 onready var Event_item_collection=get_node("Event_item_collection")
 onready var Spawing_area_collection=get_node("Spawning_area_collection")
-
+onready var player= get_node("Player")
 onready var spawned=false
 
 func _ready() -> void:
@@ -47,3 +47,13 @@ func _on_Area2D_player_entered(area: Area2D) -> void:
 		enemy_spawnin_node.get_child(i).set_visible(true);
 
 
+
+
+func _on_player_entered(shooting_condition) -> void:
+	print("Signal_caaught")
+	player.shoot_condition(shooting_condition)
+
+
+func _on_player_exited(shooting_condition) -> void:
+	print("Signal_caaught")
+	player.shoot_condition(shooting_condition)

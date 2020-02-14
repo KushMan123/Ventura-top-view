@@ -20,7 +20,8 @@ var ideal_state
 onready var tween=get_node("Tween")
 onready var timer=get_node("Timer")
 
-var can_shoot=true
+onready var can_shoot =true
+onready var shooting =false
 var facing="front"
 
 func _ready() -> void:
@@ -33,14 +34,17 @@ func _physics_process(delta: float) -> void:
 	before_direction=direction
 	direction=calculate_normalized_direction()
 	if abs(direction.x)+abs(direction.y)<2:
+		print(Input.is_action_just_pressed("shoot"))
+		print(Input.is_action_pressed("ready_to_shoot"))
 		if Input.is_action_just_pressed("shoot"):
+			print("when_clicked",can_shoot)
 			shoot()
 		if Input.is_action_just_pressed("boost"):
 			MAX_SPEED=450.0
 		if Input.is_action_just_released("boost"):
 			MAX_SPEED=350.0
 		update_animation(direction,before_direction)
-		set_position2d()
+		set_position2d(direction)
 		motion=calculate_motion(direction,move_speed,delta)
 		motion=limit_velocity(motion)
 		move_and_slide(motion)
@@ -134,11 +138,15 @@ func damage(damage):
 	if HEALTH<=0:
 		queue_free()
 	
-func set_position2d():
+func set_position2d(direction):
 	$"firing direction".look_at(get_global_mouse_position())
+	
+func shoot_condition(shooting_condition: bool):
+	print(shooting_condition)
+	shooting=shooting_condition
 
 func shoot():
-	if can_shoot:
+	if can_shoot and shooting:
 		can_shoot = false
 		timer.start()
 		var dir = Vector2(1, 0).rotated($"firing direction".global_rotation)
