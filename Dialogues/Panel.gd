@@ -19,3 +19,8 @@ func _on_Timer_timeout() -> void:
 
 func _on_Button_pressed() -> void:
 	set_visible(false)
+	
+func _on_page_complete():
+	var char_no = $Text.get_total_character_count()
+	if($Text.get_visible_character() == char_no - 1):
+		page += 1

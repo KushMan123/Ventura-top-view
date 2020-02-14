@@ -16,8 +16,10 @@ var player : Player
 func _ready():
 	print(health)
 	set_physics_process(false)
+	$AnimatedSprite.play("start")
 
 func _physics_process(delta):
+	
 	var direction = (player.global_position-global_position).normalized()
 	var distance_to_player=global_position.distance_to(player.global_position)
 	var curr_dir= Vector2(1,0). rotated($"firing direction".global_rotation)
@@ -26,8 +28,6 @@ func _physics_process(delta):
 	if direction.dot(curr_dir)>0.9:
 		shoot()
 	
-	enemy.flip_h=direction.x<0
-	enemy.flip_v=direction.y<0
 	if distance_to_player >= min_move_distance:
 		move_and_collide(direction* enemey_speed*delta)
 	if timer.is_stopped() and distance_to_player <= attack_distance:
@@ -60,3 +60,5 @@ func damage(damage):
 	health-=damage
 	if health==0:
 		self.queue_free()
+		
+	
