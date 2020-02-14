@@ -15,34 +15,34 @@
 [ext_resource path="res://Character/Player.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Areas/town area.gd" type="Script" id=14]
 
-[sub_resource type="CapsuleShape2D" id=9]
+[sub_resource type="CapsuleShape2D" id=1]
 radius = 40.8125
 
-[sub_resource type="RectangleShape2D" id=10]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 41.1151, 44.6113 )
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 667.897, 680.909 )
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 714.075, 599.332 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 655.13, 719.904 )
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 501.485, 600.443 )
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 427.772, 555.095 )
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 646.9, 277.367 )
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 245.838, 558.036 )
 
-[sub_resource type="RectangleShape2D" id=11]
+[sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 2350.64, 2057.78 )
 
 [node name="Node2D" type="Node2D"]
@@ -154,7 +154,7 @@ texture = ExtResource( 9 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Event_item_collection/Obstacle 1"]
 position = Vector2( 14.9375, 8.1322 )
-shape = SubResource( 9 )
+shape = SubResource( 1 )
 
 [node name="Obstacle 5" type="KinematicBody2D" parent="Event_item_collection"]
 editor/display_folded = true
@@ -171,7 +171,7 @@ texture = ExtResource( 9 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Event_item_collection/Obstacle 5"]
 position = Vector2( 14.9375, 8.1322 )
-shape = SubResource( 9 )
+shape = SubResource( 1 )
 
 [node name="Obstacle 2" type="KinematicBody2D" parent="Event_item_collection"]
 editor/display_folded = true
@@ -188,7 +188,7 @@ texture = ExtResource( 9 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Event_item_collection/Obstacle 2"]
 position = Vector2( 14.9375, 8.1322 )
-shape = SubResource( 9 )
+shape = SubResource( 1 )
 
 [node name="Obstacle 6" type="KinematicBody2D" parent="Event_item_collection"]
 editor/display_folded = true
@@ -205,7 +205,7 @@ texture = ExtResource( 9 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Event_item_collection/Obstacle 6"]
 position = Vector2( 14.9375, 8.1322 )
-shape = SubResource( 9 )
+shape = SubResource( 1 )
 
 [node name="Obstacle 10" type="KinematicBody2D" parent="Event_item_collection"]
 editor/display_folded = true
@@ -222,7 +222,7 @@ texture = ExtResource( 9 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Event_item_collection/Obstacle 10"]
 position = Vector2( 14.9375, 8.1322 )
-shape = SubResource( 9 )
+shape = SubResource( 1 )
 
 [node name="Obstacle 3" type="KinematicBody2D" parent="Event_item_collection"]
 editor/display_folded = true
@@ -239,7 +239,7 @@ texture = ExtResource( 10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Event_item_collection/Obstacle 3"]
 position = Vector2( 11.6953, 4.3497 )
-shape = SubResource( 10 )
+shape = SubResource( 2 )
 
 [node name="Obstacle 7" type="KinematicBody2D" parent="Event_item_collection"]
 editor/display_folded = true
@@ -256,7 +256,7 @@ texture = ExtResource( 10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Event_item_collection/Obstacle 7"]
 position = Vector2( 11.6953, 4.3497 )
-shape = SubResource( 10 )
+shape = SubResource( 2 )
 
 [node name="Obstacle 4" type="KinematicBody2D" parent="Event_item_collection"]
 editor/display_folded = true
@@ -273,7 +273,7 @@ texture = ExtResource( 10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Event_item_collection/Obstacle 4"]
 position = Vector2( 11.6953, 4.3497 )
-shape = SubResource( 10 )
+shape = SubResource( 2 )
 
 [node name="Obstacle 8" type="KinematicBody2D" parent="Event_item_collection"]
 editor/display_folded = true
@@ -290,7 +290,7 @@ texture = ExtResource( 10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Event_item_collection/Obstacle 8"]
 position = Vector2( 11.6953, 4.3497 )
-shape = SubResource( 10 )
+shape = SubResource( 2 )
 
 [node name="Obstacle 9" type="KinematicBody2D" parent="Event_item_collection"]
 editor/display_folded = true
@@ -307,7 +307,7 @@ texture = ExtResource( 10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Event_item_collection/Obstacle 9"]
 position = Vector2( 11.6953, 4.3497 )
-shape = SubResource( 10 )
+shape = SubResource( 2 )
 
 [node name="Spawning_area_collection" type="Node2D" parent="."]
 
@@ -322,7 +322,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spawning_area_collection/Area_1"]
 modulate = Color( 0.545098, 0.231373, 0.231373, 1 )
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="Enemy_Collection" type="Node2D" parent="Spawning_area_collection/Area_1"]
 position = Vector2( -5834.82, -2342.47 )
@@ -360,7 +360,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spawning_area_collection/Area_2"]
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 
 [node name="Enemy_Collection" type="Node2D" parent="Spawning_area_collection/Area_2"]
 position = Vector2( -6230.22, -770.905 )
@@ -394,7 +394,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spawning_area_collection/Area_3"]
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 
 [node name="Enemy_Collection" type="Node2D" parent="Spawning_area_collection/Area_3"]
 editor/display_folded = true
@@ -428,7 +428,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spawning_area_collection/Area_4"]
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
 [node name="Enemy_Collection" type="Node2D" parent="Spawning_area_collection/Area_4"]
 editor/display_folded = true
@@ -459,7 +459,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spawning_area_collection/Area_5"]
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 
 [node name="Enemy_Collection" type="Node2D" parent="Spawning_area_collection/Area_5"]
 position = Vector2( -7763.48, 441.701 )
@@ -493,7 +493,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spawning_area_collection/Area_6"]
-shape = SubResource( 7 )
+shape = SubResource( 8 )
 
 [node name="Enemy_Collection" type="Node2D" parent="Spawning_area_collection/Area_6"]
 position = Vector2( -7091.85, 440.322 )
@@ -526,7 +526,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spawning_area_collection/Area_7"]
-shape = SubResource( 8 )
+shape = SubResource( 9 )
 
 [node name="Enemy_Collection" type="Node2D" parent="Spawning_area_collection/Area_7"]
 editor/display_folded = true
@@ -570,7 +570,7 @@ script = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/town area"]
 position = Vector2( 0, 77.2495 )
-shape = SubResource( 11 )
+shape = SubResource( 10 )
 [connection signal="body_entered" from="Spawning_area_collection/Area_1" to="Spawning_area_collection/Area_1" method="_on_Area2D_body_entered"]
 [connection signal="player_entered" from="Spawning_area_collection/Area_1" to="." method="_on_Area2D_player_entered"]
 [connection signal="shoot" from="Spawning_area_collection/Area_1/Enemy_Collection/EnemyFollowsU" to="." method="_on_shoot"]

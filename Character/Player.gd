@@ -29,12 +29,17 @@ func _ready() -> void:
 	timer.wait_time=shoot_cooldown
 	set_physics_process(true)
 	$AnimatedSprite.play("ideal_front",true)
+	$"firing direction".set_visible(false)
 
 func _physics_process(delta: float) -> void:
 	before_direction=direction
 	direction=calculate_normalized_direction()
+	if Input.is_action_pressed("shoot_ready"):
+		$"firing direction".set_visible(true)
+	else:
+		$"firing direction".set_visible(false)
 	if abs(direction.x)+abs(direction.y)<2:
-		if Input.is_action_just_pressed("shoot"):
+		if Input.is_action_just_pressed("shoot") and Input.is_action_pressed("shoot_ready"):
 			shoot()
 		if Input.is_action_just_pressed("boost"):
 			MAX_SPEED=450.0
