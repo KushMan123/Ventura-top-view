@@ -17,6 +17,7 @@ var before_direction=Vector2()
 var direction=Vector2()
 var Position2d_position=Vector2(35,35)
 var ideal_state
+var music
 onready var tween=get_node("Tween")
 onready var timer=get_node("Timer")
 
@@ -24,6 +25,8 @@ var can_shoot=true
 var facing="front"
 
 func _ready() -> void:
+	music = AudioStreamPlayer2D.new()
+	self.add_child(music)
 	print(HEALTH)
 	timer.wait_time=shoot_cooldown
 	set_physics_process(true)
@@ -151,3 +154,18 @@ func _on_Timer_timeout() -> void:
 func _on_Bullet_area_area_entered(area: Area2D) -> void:
 	if area is EnemyBullet:
 		damage(area.damage)
+
+
+func _on_Area2D_area_entered(area):
+	if area.name == 'village':
+		music.set_volume_db(10)
+		music.stream = load('res://Audio and sound effects/village.ogg') 
+		music.play()
+	elif area.name == 'forest':
+		music.set_volume_db(0)
+		music.stream = load('res://Audio and sound effects/forest_noise.ogg')
+		music.play()
+	elif area.name == 'wizard_place':
+		music.set_volume_db(0)
+		music.stream = load('res://Audio and sound effects/wizard_mystery.ogg')
+		music.play()

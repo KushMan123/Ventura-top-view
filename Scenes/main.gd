@@ -6,14 +6,19 @@ onready var Tilemap_collection=get_node("Tile map collection")
 onready var Character_collection=get_node("Charcter_collection")
 onready var Player=get_node("Player")
 onready var Event_item_collection=get_node("Event_item_collection")
+var audio
 
 func _ready() -> void:
+	audio = AudioStreamPlayer2D.new()
+	self.add_child(audio)
 	set_process(true)
 	set_camera_limits()
 
 func _process(delta: float) -> void:
 	if global.is_inside_area and global.is_talkable:
 		if Input.is_action_just_pressed("Z_button"):
+			audio.stream = load("res://Audio and sound effects/select_sound.wav")
+			audio.play()
 			print("z button pressed")
 			var index=int(global.area_entered_name[-1])
 			Character_collection.get_child(index-1)._dialogs()
