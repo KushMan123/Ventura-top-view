@@ -26,7 +26,7 @@ var facing="front"
 
 func _ready() -> void:
 	print(HEALTH)
-	timer.wait_time=shoot_cooldown
+	$Shooting_timer.wait_time=shoot_cooldown
 	set_physics_process(true)
 	$AnimatedSprite.play("ideal_front",true)
 	$"firing direction".set_visible(false)
@@ -34,7 +34,7 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	before_direction=direction
 	direction=calculate_normalized_direction()
-	if Input.is_action_pressed("shoot_ready"):
+	if Input.is_action_pressed("shoot_ready") and shooting:
 		$"firing direction".set_visible(true)
 	else:
 		$"firing direction".set_visible(false)
@@ -135,6 +135,8 @@ func calculate_position_after_hit(direction: Vector2):
 		
 	
 func damage(damage):
+	$Hit.set_visible(true)
+	$"Hit timer".start(0.2)
 	print (HEALTH)
 	HEALTH-=damage
 	if HEALTH<=0:
@@ -150,7 +152,7 @@ func shoot_condition(shooting_condition: bool):
 func shoot():
 	if can_shoot and shooting:
 		can_shoot = false
-		timer.start()
+		$Shooting_timer.start()
 		var dir = Vector2(1, 0).rotated($"firing direction".global_rotation)
 		emit_signal('shoot', Bullet, $"firing direction/Firing".global_position, dir)
 
@@ -161,3 +163,7 @@ func _on_Timer_timeout() -> void:
 func _on_Bullet_area_area_entered(area: Area2D) -> void:
 	if area is EnemyBullet:
 		damage(area.damage)
+
+
+func _on_Hit_timer_timeout() -> void:
+	$Hit.set_visible(false)
