@@ -567,7 +567,7 @@ position = Vector2( 0, 77.2495 )
 shape = SubResource( 10 )
 
 [node name="Player" parent="." instance=ExtResource( 14 )]
-position = Vector2( 1187.05, 3634.92 )
+position = Vector2( 559.313, 456.998 )
 
 [node name="Tree leaves" type="TileMap" parent="."]
 tile_set = ExtResource( 2 )

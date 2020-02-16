@@ -46,8 +46,9 @@
 [ext_resource path="res://assets/Character spriites/Player/Rignt/Pushing/pushing 2.png" type="Texture" id=44]
 [ext_resource path="res://assets/Character spriites/Player/Rignt/Pushing/pushing 3.png" type="Texture" id=45]
 [ext_resource path="res://assets/Character spriites/Player/Rignt/Pushing/pushing 4.png" type="Texture" id=46]
-[ext_resource path="res://assets/Unique_Projectiles_Volume_1/Textures/Flame01.PNG" type="Texture" id=47]
+[ext_resource path="res://assets/Unique_Projectiles_Volume_1/Flame01.PNG" type="Texture" id=47]
 [ext_resource path="res://assets/Unique_Projectiles_Volume_1/Textures/Hit_ImpactWhite02.png" type="Texture" id=48]
+
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
